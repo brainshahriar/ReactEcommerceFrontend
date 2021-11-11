@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { Router,Route } from 'react-router'
-import { Switch } from 'react-router-dom'
+import { Router,Route,Switch } from 'react-router'
+
 import HomePage from '../pages/HomePage'
 
 class AppRoute extends Component {
@@ -8,7 +8,7 @@ class AppRoute extends Component {
         return (
                 <Fragment>
                     <Switch>
-                        <Route exact to="/" Component={HomePage}></Route>
+                        <Route exact to="/" component={HomePage} />
                     </Switch>
                 </Fragment>
         )

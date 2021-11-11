@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom';
 import AppRoute from './route/AppRoute';
 
  class App extends Component {
