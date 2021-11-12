@@ -9,6 +9,7 @@
 @import "navMenuMobile.css";
 @import "navMenuDekstop.css";
 @import "animate.min.css";
+@import "megaMenuMobile.css";
 
 body{
     background-color:white;
