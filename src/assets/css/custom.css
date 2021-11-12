@@ -8,6 +8,7 @@
 @import "megaMenu.css";
 @import "navMenuMobile.css";
 @import "navMenuDekstop.css";
+@import "animate.min.css";
 
 body{
     background-color:aquamarine;
