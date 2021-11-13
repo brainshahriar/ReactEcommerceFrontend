@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react'
+import Contact from '../components/common/Contact'
 import FooterDekstop from '../components/common/FooterDekstop'
 import FooterMobile from '../components/common/FooterMobile'
 import NavMenuDekstop from '../components/common/NavMenuDekstop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
-import UserLogin from '../components/common/UserLogin'
 
 
-class UserLoginPage extends Component {
+class ContactPage extends Component {
      render() {
           return (
                <Fragment> 
@@ -18,7 +18,7 @@ class UserLoginPage extends Component {
                <NavMenuMobile />  
                </div>                       
 
-               <UserLogin /> 
+               <Contact /> 
 
                <div className="Desktop">
                <FooterDekstop/>
@@ -33,4 +33,4 @@ class UserLoginPage extends Component {
      }
 }
 
-export default UserLoginPage
+export default ContactPage
