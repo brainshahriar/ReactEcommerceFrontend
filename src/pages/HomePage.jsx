@@ -7,18 +7,28 @@ import FeaturedProducts from '../components/home/FeaturedProducts'
 import HomeTop from '../components/home/HomeTop'
 import HomeTopMobile from '../components/home/HomeTopMobile'
 import NewArrival from '../components/home/NewArrival'
+import NavMenuDekstop from '../components/common/NavMenuDekstop'
 
 class HomePage extends Component {
     render() {
         return (
             <Fragment>
-                {/* <NavMenuDekstop /> */}
-                <NavMenuMobile />
-                <HomeTop />
-                <FeaturedProducts />
-                <NewArrival />
-                <Categories />
-                <Collection />
+      
+                <div className="Desktop">
+               <NavMenuDesktop />
+               <HomeTop />
+                    </div>
+
+                    <div className="Mobile">
+                    <NavMenuMobile />  
+                    <HomeTopMobile />
+                    </div> 
+
+
+                    <FeaturedProducts />
+                    <NewArrival />
+                    <Categories />
+                    <Collection />
             </Fragment>
         )
     }
