@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import FooterDekstop from '../components/common/FooterDekstop'
 import NavMenuDekstop from '../components/common/NavMenuDekstop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
+import FooterMobile from '../components/common/FooterMobile'
 import Categories from '../components/home/Categories'
 import Collection from '../components/home/Collection'
 import FeaturedProducts from '../components/home/FeaturedProducts'
@@ -29,7 +30,13 @@ class HomePage extends Component {
                     <NewArrival />
                     <Categories />
                     <Collection />
+                    <div className="Desktop">
                     <FooterDekstop />
+                    </div>
+
+                    <div className="Mobile">
+                    <FooterMobile/>
+                    </div>
             </Fragment>
         )
     }
