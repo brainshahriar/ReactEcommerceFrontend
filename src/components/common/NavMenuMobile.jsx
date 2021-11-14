@@ -4,6 +4,7 @@ import Logo from '../../assets/images/easyshop.png';
 import {Link} from "react-router-dom";
 import MegaMenuMobile from '../home/MegaMenuMobile';
 class NavMenuMobile extends Component {
+     
 
     constructor(){
         super();
