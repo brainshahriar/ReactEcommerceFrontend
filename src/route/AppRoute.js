@@ -7,6 +7,7 @@ import ContactPage from '../pages/ContactPage';
 import PrivacyPage from '../pages/PrivacyPage';
 import PurchasePage from '../pages/PurchasePage';
 import RefundPage from '../pages/RefundPage';
+import NotificationPage from '../pages/NotificationPage';
 
 
 class AppRoute extends Component {
@@ -22,6 +23,7 @@ class AppRoute extends Component {
                <Route exact path="/privacy" component={PrivacyPage} />
                <Route exact path="/refund" component={RefundPage} />
                <Route exact path="/productdetails" component={ProductDetailsPage} />
+               <Route exact path="/notification" component={NotificationPage} />
             </Switch>
             </Fragment>
         )
