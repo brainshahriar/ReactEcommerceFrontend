@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Router,Route,Switch } from 'react-router'
 import UserLoginPage from "../pages/UserLoginPage";
 import HomePage from '../pages/HomePage'
+import ProductDetailsPage from '../pages/ProductDetailsPage';
 import ContactPage from '../pages/ContactPage';
 import PrivacyPage from '../pages/PrivacyPage';
 import PurchasePage from '../pages/PurchasePage';
@@ -20,6 +21,7 @@ class AppRoute extends Component {
                  <Route exact path="/purchase" component={PurchasePage} />
                <Route exact path="/privacy" component={PrivacyPage} />
                <Route exact path="/refund" component={RefundPage} />
+               <Route exact path="/productdetails" component={ProductDetailsPage} />
             </Switch>
             </Fragment>
         )
