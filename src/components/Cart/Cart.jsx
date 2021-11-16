@@ -11,9 +11,6 @@ class Cart extends Component {
 
     <div className="section-title text-center mb-55"><h2>Product Cart List</h2>   
           </div>
-
-
-
                    <Row>
 
 
@@ -22,7 +19,7 @@ class Cart extends Component {
                <Card.Body>
                <Row>
                     <Col md={3} lg={3} sm={6} xs={6}>
-                         <img className="w-100 h-100" src={Product1} />
+                    <img className="cart-product-img" src={Product1} />
                     </Col>
 
                     <Col md={6} lg={6} sm={6} xs={6}>
@@ -32,7 +29,7 @@ class Cart extends Component {
                     </Col>
 
                     <Col md={3} lg={3} sm={12} xs={12}>
-                    <input placeholder="2" className="form-control text-center" type="number" />
+                    <input placeholder="1" className="form-control text-center" type="number" />
                     <Button className="btn btn-block w-100 mt-3  site-btn"><i className="fa fa-trash-alt"></i> Remove </Button>
 
                     </Col>
@@ -59,7 +56,7 @@ class Cart extends Component {
                     </Col>
 
                     <Col md={3} lg={3} sm={12} xs={12}>
-                    <input placeholder="2" className="form-control text-center" type="number" />
+                    <input placeholder="1" className="form-control text-center" type="number" />
                     <Button className="btn btn-block w-100 mt-3  site-btn"><i className="fa fa-trash-alt"></i> Remove </Button>
 
                     </Col>
@@ -75,7 +72,7 @@ class Cart extends Component {
                <Card.Body>
                <Row>
                     <Col md={3} lg={3} sm={6} xs={6}>
-                         <img className="w-100 h-100" src={Product1} />
+                    <img className="cart-product-img" src={Product1} />
                     </Col>
 
                     <Col md={6} lg={6} sm={6} xs={6}>
@@ -85,7 +82,7 @@ class Cart extends Component {
                     </Col>
 
                     <Col md={3} lg={3} sm={12} xs={12}>
-                    <input placeholder="2" className="form-control text-center" type="number" />
+                    <input placeholder="1" className="form-control text-center" type="number" />
                     <Button className="btn btn-block w-100 mt-3  site-btn"><i className="fa fa-trash-alt"></i> Remove </Button>
 
                     </Col>
@@ -102,7 +99,7 @@ class Cart extends Component {
                <Card.Body>
                <Row>
                     <Col md={3} lg={3} sm={6} xs={6}>
-                         <img className="w-100 h-100" src={Product1} />
+                    <img className="cart-product-img" src="https://rukminim1.flixcart.com/image/416/416/knm2s280/mobile/j/x/c/hot-10-play-x688b-infinix-original-imag29gxqzuxkmnk.jpeg?q=70" />
                     </Col>
 
                     <Col md={6} lg={6} sm={6} xs={6}>
@@ -112,7 +109,7 @@ class Cart extends Component {
                     </Col>
 
                     <Col md={3} lg={3} sm={12} xs={12}>
-                    <input placeholder="2" className="form-control text-center" type="number" />
+                    <input placeholder="1" className="form-control text-center" type="number" />
                     <Button className="btn btn-block w-100 mt-3  site-btn"><i className="fa fa-trash-alt"></i> Remove </Button>
 
                     </Col>
@@ -123,11 +120,22 @@ class Cart extends Component {
 
 
 
+     <Col className="p-1" lg={12} md={12} sm={12} xs={12} >
+          <Card >                
+               <Card.Body>
+               <Row>
 
 
+     <Col md={4} lg={4} sm={6} xs={6}>
 
-
-
+                <h5> Total Item = 05 </h5>
+                <h5>Total Price = 5000$</h5>
+                <Button className="btn btn-block w-100 mt-3  site-btn"><i className="fa fa-shopping-cart"></i> CheckOut </Button>
+                    </Col> 
+               </Row>              
+               </Card.Body>               
+          </Card>
+     </Col> 
 
 
 

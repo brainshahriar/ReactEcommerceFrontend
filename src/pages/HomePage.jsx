@@ -9,10 +9,16 @@ import FeaturedProducts from '../components/home/FeaturedProducts'
 import HomeTop from '../components/home/HomeTop'
 import HomeTopMobile from '../components/home/HomeTopMobile'
 import NewArrival from '../components/home/NewArrival'
+import AppURL from '../api/AppURL'
+import axios from 'axios'
 
 class HomePage extends Component {
     componentDidMount(){
         window.scroll(0,0)
+        this.GetVisitorDetsils();
+   }
+   GetVisitorDetsils=()=>{
+    axios.get(AppURL.VisitorDetails).then().catch()
    }
     render() {
         return (

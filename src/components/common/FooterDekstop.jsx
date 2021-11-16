@@ -35,7 +35,6 @@ class FooterDekstop extends Component {
           <Link to="/privacy" className="footer-link"> Privacy Policy</Link><br></br>
           <Link to="/refund" className="footer-link"> Refund Policy </Link><br></br>
                </Col>
-     
                <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
                <h5 className="footer-menu-title">DOWNLOAD APPS</h5>
                <a><img src={Google}  /></a><br></br>
