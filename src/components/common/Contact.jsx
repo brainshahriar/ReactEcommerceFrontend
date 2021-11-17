@@ -47,7 +47,7 @@ export class Contact extends Component {
                toast.error("Please write down our name");
           }
           else if(email.length==0){
-               alert("Please Write Down Your Email");
+               toast.error("Please Write Down Your Email");
           }
           else if(!(validation.NameRegx).test(name)){
                toast.error("Invaid Name");
