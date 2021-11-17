@@ -34,6 +34,16 @@ export class Contact extends Component {
           let email=this.state.email;
           let message=this.state.message;
 
+          if(message.length==0){
+               alert("Please Write Your Message");
+          }
+          else if(name.length==0){
+               alert("Please Write Down Your Name");
+          }
+          else if(email.length==0){
+               alert("Please Write Down Your Email");
+          }
+
           e.preventDefault();
      }
      render() {
