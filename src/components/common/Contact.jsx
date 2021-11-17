@@ -29,7 +29,11 @@ export class Contact extends Component {
 
      }
      onFormSubmit = (e) =>{
-          alert("HEllo");
+          
+          let name = this.state.name;
+          let email=this.state.email;
+          let message=this.state.message;
+
           e.preventDefault();
      }
      render() {
