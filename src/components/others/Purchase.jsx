@@ -49,7 +49,7 @@ export class Purchase extends Component {
                <Container>
                     <Row className="p-2">
             <Col className="shadow-sm bg-white mt-2" md={12} lg={12} sm={12} xs={12}>
-            <div className={this.state.loaderDiv}>
+<div className={this.state.loaderDiv}>
  <div class="ph-item">
     <div class="ph-col-12">
         <div class="ph-row">
