@@ -3,6 +3,8 @@ import { Container,Row,Col, Form,Button } from 'react-bootstrap'
 import AppURL from '../../api/AppURL';
 import axios from 'axios'
 import parse from 'html-react-parser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export class Purchase extends Component {
      constructor(){
@@ -12,16 +14,33 @@ export class Purchase extends Component {
                }
      }
      componentDidMount(){
-          axios.get(AppURL.AllSiteInfo).then(response=>{
-               let StatusCode = response.status;
-               if(StatusCode==200){
-                    let JsonData = (response.data)[0]['purchase_guide'];
-                    this.setState({purchase:JsonData});
-               }
-           }).catch(error=>{
 
-           });
-     }
+          let SiteInfoPurchase = sessionStorage.getItem("AllSiteInfo");
+          if(SiteInfoPurchase==null){
+               axios.get(AppURL.AllSiteInfo).then(response=>{
+                    let StatusCode = response.status;
+                    if(StatusCode==200){
+                         let JsonData = (response.data)[0]['purchase_guide'];
+                         this.setState({purchase:JsonData});
+
+                         sessionStorage.setItem("SiteInfoPurchase",JsonData)
+                    }
+                    else{
+                         toast.error("Something Went Wrong",{
+                              position:"bottom-center"
+                         }); 
+                    }
+                }).catch(error=>{
+                    toast.error("Something Went Wrong",{
+                         position:"bottom-center"
+                    }); 
+                });
+          } //end if condition
+          else{
+               this.setState({purchase:SiteInfoPurchase});
+          }
+
+     }  
      render() {
           return (
                <Fragment>
@@ -37,6 +56,7 @@ export class Purchase extends Component {
                          </Col>
                     </Row>
                </Container>
+               <ToastContainer />
           </Fragment>
           )
      }
