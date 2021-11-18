@@ -1,32 +1,31 @@
 import React, { Component } from 'react'
+import AppURL from '../../api/AppURL';
+import axios from 'axios'
 
 class MegaMenuAll extends Component {
      constructor(){
           super();
-          this.MegaMenu = this.MegaMenu.bind(this);
+          this.state ={
+               MenuData:[]
+          }
      }
 
      componentDidMount(){
-          this.MegaMenu();
-     }
+          axios.get(AppURL.AllCategoryDetails).then(response =>{ 
+               this.setState({MenuData:response.data});
 
+         }).catch(error=>{
 
+     });
+}
 
-     MegaMenu(){
-          var acc = document.getElementsByClassName("accordionAll");
-          var accNum = acc.length;
-          var i;
-          for(i=0;i<accNum;i++){
-               acc[i].addEventListener("click",function (){
-                    this.classList.toggle("active");
-                    var panel = this.nextElementSibling;
-                    if(panel.style.maxHeight){
-                         panel.style.maxHeight = null;
-                    }else{
-                         panel.style.maxHeight= panel.scrollHeight+ "px"
-                    }
-               })
-          }
+MenuItemClick=(event)=>{
+     event.target.classList.toggle("active");
+     var panel = event.target.nextElementSibling;
+     if(panel.style.maxHeight){
+          panel.style.maxHeight = null;
+     }else{
+          panel.style.maxHeight= panel.scrollHeight+ "px"
      }
 
 
