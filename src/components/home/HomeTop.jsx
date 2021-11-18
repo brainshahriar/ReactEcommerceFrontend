@@ -30,7 +30,7 @@ class HomeTop extends Component {
         <Container className="p-0 m-0 overflow-hidden" fluid={true}>
                          <Row>
                               <Col lg={3} md={3} sm={12}>
-                              <div className={this.state.loaderDiv}>
+<div className={this.state.loaderDiv}>
  <div class="ph-item">
     <div class="ph-col-12">
         <div class="ph-row">
@@ -50,7 +50,7 @@ class HomeTop extends Component {
     </div>
 </div>   
   
-     </div>
+</div>
      <div className={this.state.mainDiv}>
      <MegaMenu data={this.state.MenuData}/>
           </div>
