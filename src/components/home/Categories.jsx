@@ -135,7 +135,7 @@ class Categories extends Component {
           <img className="center" src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100" />  
           <h5 className="category-name">Mobiles</h5>  
           </Card.Body>
-          </Card> 
+          </Card>  
           </Col>
 
 

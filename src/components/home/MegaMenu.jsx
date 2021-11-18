@@ -2,14 +2,12 @@ import React, { Component, Fragment } from 'react'
 
 class MegaMenu extends Component {
 
-    constructor(){
+    constructor(props){
         super();
-        this.MegaMenu = this.MegaMenu.bind(this);
+
    }
 
-   componentDidMount(){
-        this.MegaMenu();
-   }
+
 
 
 

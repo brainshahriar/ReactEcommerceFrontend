@@ -62,27 +62,9 @@ class FooterDekstop extends Component {
             <div class="ph-col-6 empty"></div>
             <div class="ph-col-12"></div>
             <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
         </div>
     </div>
 </div>   
-<div class="ph-item">
-    <div class="ph-col-12">
-        <div class="ph-row">
-
-            <div class="ph-col-4"></div>
-            <div class="ph-col-8 empty"></div>
-            <div class="ph-col-6"></div>
-            <div class="ph-col-6 empty"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-        </div>
-    </div>
-</div>   
- 
      </div>
                     <h5 className="footer-menu-title">OFFICE ADDRESS</h5>
                     <div className={this.state.mainDiv}>
