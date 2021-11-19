@@ -1,5 +1,9 @@
 @media (max-width: 374.98px) { 
-
+    .slider-img {
+         width: 100% !important;
+         height: 226px;
+     }
+    
     .Mobile{
 
     }
@@ -9,13 +13,18 @@
 }
 
 @media (min-width: 375.98px) and (max-width: 575.98px){
+    .slider-img {
+         width: 100% !important;
+         height: 226px;
+     }
+     
     .Mobile{
 
     }
     .Desktop{
          display: none;
          }  
-
+ 
 }
 
 
@@ -35,10 +44,10 @@
          display: none;
     }
     .Desktop{
-
+         
     }
-
-
+   
+  
 }
 
 
@@ -47,9 +56,9 @@
          display: none;
     }
     .Desktop{
-
+         
     }
-
+   
 }
 
 
@@ -58,7 +67,7 @@
          display: none;
     }
     .Desktop{
-
+         
     }
 
 }
