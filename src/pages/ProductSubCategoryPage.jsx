@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Fragment } from 'react'
 import AppURL from '../api/AppURL'
-import FooterDesktop from '../components/common/FooterDesktop'
+import FooterDekstop from '../components/common/FooterDekstop'
 import FooterMobile from '../components/common/FooterMobile'
-import NavMenuDesktop from '../components/common/NavMenuDesktop'
+import NavMenuDekstop from '../components/common/NavMenuDekstop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
 import axios from 'axios'
 import SubCategory from '../components/ProductDetails/SubCategory'
@@ -36,7 +36,7 @@ class ProductSubCategoryPage extends Component {
           return (
                <Fragment> 
                <div className="Desktop">
-                <NavMenuDesktop /> 
+                <NavMenuDekstop /> 
                </div>
 
                <div className="Mobile">
@@ -47,7 +47,7 @@ class ProductSubCategoryPage extends Component {
 
 
                <div className="Desktop">
-               <FooterDesktop/>
+               <FooterDekstop/>
                </div>
 
                <div className="Mobile">

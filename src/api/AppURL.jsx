@@ -11,7 +11,7 @@ class AppURL {
      static ProductListByCategory(category){
          return this.BaseURL+"/productlistbycategory/"+category;
      }
-     static ProductListBySubcategory(category,subcategory){
+     static ProductListBySubCategory(category,subcategory){
          return this.BaseURL+"/productlistbysubcategory/"+category+"/"+subcategory;
      }
 
