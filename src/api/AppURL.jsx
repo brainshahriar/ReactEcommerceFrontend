@@ -8,12 +8,12 @@ class AppURL {
     static ProductListByRemark(Remark){
         return this.BaseURL+"/productlistbyremark/"+Remark;
     }
-    // static ProuctListByCategory(category){
-    //     return this.BaseURL+"/productlistbycategory/"+category;
-    // }
-    // static ProuctListBySubcategory(category,subcategory){
-    //     return this.BaseURL+"/productlistbysubcategory/"+category+"/"+subcategory;
-    // }
+     static ProductListByCategory(category){
+         return this.BaseURL+"/productlistbycategory/"+category;
+     }
+     static ProductListBySubcategory(category,subcategory){
+         return this.BaseURL+"/productlistbysubcategory/"+category+"/"+subcategory;
+     }
 
     
 
