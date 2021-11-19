@@ -65,5 +65,4 @@ class HomeTop extends Component {
           )
      }
 }
-
 export default HomeTop
