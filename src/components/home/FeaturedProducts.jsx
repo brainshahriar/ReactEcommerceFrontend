@@ -15,7 +15,7 @@ class FeaturedProducts extends Component {
 
 
      componentDidMount(){
-          axios.get(AppURL.ProuctListByRemark("FEATURED")).then(response =>{
+          axios.get(AppURL.ProductListByRemark("FEATURED")).then(response =>{
                
                this.setState({ProductData:response.data});         
 
