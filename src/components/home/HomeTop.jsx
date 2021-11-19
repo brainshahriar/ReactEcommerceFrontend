@@ -10,8 +10,7 @@ class HomeTop extends Component {
           super();
           this.state ={
                MenuData:[],
-               loaderDiv:"",
-               mainDiv:"d-none"
+               SliderData:[]
           }
      }
 
@@ -22,6 +21,13 @@ class HomeTop extends Component {
           }).catch(error=>{
 
           });
+
+          axios.get(AppURL.AllSlider).then(response =>{ 
+               this.setState({SliderData:response.data});
+
+         }).catch(error=>{
+
+         });
      }
 
      render() {
@@ -30,34 +36,13 @@ class HomeTop extends Component {
         <Container className="p-0 m-0 overflow-hidden" fluid={true}>
                          <Row>
                               <Col lg={3} md={3} sm={12}>
-<div className={this.state.loaderDiv}>
- <div class="ph-item">
-    <div class="ph-col-12">
-        <div class="ph-row">
-
-            <div class="ph-col-4"></div>
-            <div class="ph-col-8 empty"></div>
-            <div class="ph-col-6"></div>
-            <div class="ph-col-6 empty"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-        </div>
-    </div>
-</div>   
-  
-</div>
-     <div className={this.state.mainDiv}>
+   
      <MegaMenu data={this.state.MenuData}/>
-          </div>
+
             
                               </Col>
                               <Col lg={9} md={9} sm={12}>
-                              <HomeSlider />
+                              <HomeSlider data={this.state.SliderData}/>
                               </Col>
                          </Row>
                     </Container>
