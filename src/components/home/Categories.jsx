@@ -3,6 +3,7 @@ import {Container,Row,Col,Card} from 'react-bootstrap'
 import AppURL from '../../api/AppURL';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import CategoryLoading from '../PlaceHolder/CategoryLoading';
 
 class Categories extends Component {
 
@@ -10,13 +11,14 @@ class Categories extends Component {
           super();
           this.state={
                MenuData:[],
-               loaderDiv:"",
+               isLoading:"",
                mainDiv:"d-none"
           }
      }
      componentDidMount(){
           axios.get(AppURL.AllCategoryDetails).then(response =>{ 
-                this.setState({MenuData:response.data,loaderDiv:"d-none",mainDiv:""});
+               this.setState({MenuData:response.data,isLoading:"d-none",
+               mainDiv:" "});
                }).catch(error=>{
 
                });
@@ -27,25 +29,7 @@ class Categories extends Component {
                return <Col key={i.toString()} className="p-0" key={1} xl={2} lg={2} md={2} sm={6} xs={6}>
            <Link to={"/productcategory/"+CatList.category_name}>  
                     <div className={this.state.loaderDiv}>
- <div class="ph-item">
-    <div class="ph-col-12">
-        <div class="ph-row">
-
-            <div class="ph-col-4"></div>
-            <div class="ph-col-8 empty"></div>
-            <div class="ph-col-6"></div>
-            <div class="ph-col-6 empty"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-            <div class="ph-col-12"></div>
-        </div>
-    </div>
-</div>   
-  
+ 
 </div>
                <Card className="h-100 w-100 text-center">          
                <Card.Body> 
@@ -58,6 +42,9 @@ class Categories extends Component {
           })
           return (
                <Fragment>
+                            <CategoryLoading isLoading={this.state.isLoading} />
+
+                    <div className={this.state.mainDiv}>
                   <Container className="text-center" fluid={true}>
           <div className="section-title text-center mb-55"><h2> CATEGORIES</h2>
           <p>Some Of Our Exclusive Collection, You May Like</p>
@@ -66,6 +53,7 @@ class Categories extends Component {
                {MyView}
           </Row>
           </Container>
+          </div>
                </Fragment>
           )
      }
