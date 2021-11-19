@@ -6,10 +6,14 @@ class AppURL {
     static AllSiteInfo = this.BaseURL+"/allsiteinfo"
     static AllCategoryDetails = this.BaseURL+"/allcategory"
     static ProuctListByRemark(Remark){
-        return this.BaseURL+"/productlistbyremark"+Remark;
+        return this.BaseURL+"/productlistbyremark/"+Remark;
     }
-    // static AllCategoryDetails = this.BaseURL+"/allcategory"
-    // static AllCategoryDetails = this.BaseURL+"/allcategory"
+    static ProuctListByCategory(category){
+        return this.BaseURL+"/productlistbycategory/"+category;
+    }
+    static ProuctListBySubcategory(category,subcategory){
+        return this.BaseURL+"/productlistbysubcategory/"+category+"/"+subcategory;
+    }
 
     
 

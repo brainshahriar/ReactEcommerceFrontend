@@ -1,8 +1,21 @@
 import React, { Component, Fragment } from 'react'
 import {Container,Row,Col, Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import AppURL from '../../api/AppURL';
+import axios from 'axios'
+import parse from 'html-react-parser';
 
-class FeaturedProducts extends Component {
+class FeaturedProducts extends Component { 
+     constructor(){
+          super();
+          this.state={
+               ProductData=[]
+          }
+
+     }
+     componentDidMount(){
+
+     }
      render() {
           return (
               <Fragment>
