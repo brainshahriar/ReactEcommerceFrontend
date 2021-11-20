@@ -78,11 +78,6 @@ class NewArrivalLoading extends Component {
                             </a>
                         </div>
 
-
-
-
-
-
                </div>
                {/* // end row div */}
                </Container>
