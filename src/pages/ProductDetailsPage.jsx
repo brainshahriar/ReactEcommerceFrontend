@@ -9,8 +9,8 @@ import SuggestedProduct from '../components/ProductDetails/SuggestedProduct'
 import axios from 'axios'
 import SliderLoading from '../components/PlaceHolder/SliderLoading'
 
-
 class ProductDetailsPage extends Component {
+
      constructor({match}){
           super(); 
           this.state={
@@ -20,10 +20,12 @@ class ProductDetailsPage extends Component {
                mainDiv:"d-none" 
           }
      }
+
      componentDidMount(){
           window.scroll(0,0)
-          axios.get(AppURL.ProductDetails(this.state.code)).then(response =>{
 
+          axios.get(AppURL.ProductDetails(this.state.code)).then(response =>{
+               
                this.setState({ProductData:response.data,isLoading:"d-none",
                mainDiv:""});         
 
@@ -33,56 +35,68 @@ class ProductDetailsPage extends Component {
      }
 
      render() {
-          if(this.state.mainDiv=="d-none"){
+
+          if(this.state.mainDiv == "d-none"){
+
                return (
                     <Fragment> 
                     <div className="Desktop">
                      <NavMenuDekstop /> 
                     </div>
-
+     
                     <div className="Mobile">
                     <NavMenuMobile />  
                     </div>                       
-
+     
                      <SliderLoading isLoading={this.state.isLoading} />
-
-
+                    
+                    
                     <div className="Desktop">
                     <FooterDekstop/>
                     </div>
-
+     
                     <div className="Mobile">
                     <FooterMobile/>
                     </div>
-
+                    
                </Fragment>
                )
+
+
           }else{
+
+
                return (
                     <Fragment> 
                     <div className="Desktop">
                      <NavMenuDekstop /> 
                     </div>
-
+     
                     <div className="Mobile">
                     <NavMenuMobile />  
                     </div>                       
-
+     
                     <ProductDetails data={this.state.ProductData} /> 
                     <SuggestedProduct/>
-
+                    
                     <div className="Desktop">
                     <FooterDekstop/>
                     </div>
-
+     
                     <div className="Mobile">
                     <FooterMobile/>
                     </div>
-
+                    
                </Fragment>
                )
+
+
           }
 
+
+
+
+          
      }
 }
 

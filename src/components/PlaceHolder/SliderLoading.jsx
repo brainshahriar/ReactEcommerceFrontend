@@ -7,7 +7,7 @@ class SliderLoading extends Component {
 
           return (
                <div className={isLoading}>
-
+ 
                <div className="row">
                     <div className="col-3">
                     <div class="ph-row">
@@ -19,7 +19,7 @@ class SliderLoading extends Component {
                      <div class="ph-col-12"></div>
                      <div class="ph-col-12"></div>
                      <div class="ph-col-12"></div>
-
+                   
                     </div>
 
                     </div>
@@ -29,8 +29,8 @@ class SliderLoading extends Component {
                     </div>
 
                </div>
-
-
+ 
+                    
                </div>
           )
      }
