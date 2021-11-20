@@ -16,6 +16,23 @@ class ProductDetails extends Component {
      }
 
 
+     PriceOption(price,special_price){
+          if(special_price=="na"){
+               return (
+            <p className="product-price-on-card"> Price : {price}$ </p>
+               )
+          }else{
+
+               return (
+                    <p className="product-price-on-card">
+                      Price : <strike className="text-secondary">{price}$ </strike> {special_price}$ 
+                          </p>
+               )
+
+          }
+     }
+
+
      render() {
 
           let ProductAllData = this.props.data;
@@ -42,6 +59,33 @@ class ProductDetails extends Component {
      let product_id = ProductAllData['productDetails'][0]['product_id'];
      let short_description = ProductAllData['productDetails'][0]['short_description'];
      let long_description = ProductAllData['productDetails'][0]['long_description'];
+
+
+     var ColorDiv = "d-none"
+     if(color!="na"){
+          let ColorArray = color.split(',');
+          var ColorOption = ColorArray.map((ColorList,i)=>{
+               return <option value={ColorList}> {ColorList} </option>
+          })
+          ColorDiv=""
+     }
+     else{
+          ColorDiv="d-none"
+     }
+
+
+     var SizeDiv = "d-none"
+     if(size!="na"){
+          let SizeArray = size.split(',');
+          var SizeOption = SizeArray.map((SizeList,i)=>{
+               return <option value={SizeList}> {SizeList} </option>
+          })
+          SizeDiv=""
+     }
+     else{
+          SizeDiv="d-none"
+     }
+
 
 
 
@@ -73,11 +117,11 @@ class ProductDetails extends Component {
           <Col className="p-3 " md={6} lg={6} sm={12} xs={12}>
           <h5 className="Product-Name"> {title} </h5>
           <h6 className="section-sub-title"> {short_description} </h6>
-          <div className="input-group">
-               <div className="Product-price-card d-inline ">Reguler Price ${price}</div>
-               <div className="Product-price-card d-inline ">50% Discount</div>
-               <div className="Product-price-card d-inline ">New Price ${special_price}</div>
-          </div>
+          
+
+               {this.PriceOption(price,special_price)}
+
+
           <h6 className="mt-2">Category : <b>{category}</b>  </h6>          
 
           <h6 className="mt-2">SubCategory : <b>{subcategory}</b></h6>
@@ -87,6 +131,41 @@ class ProductDetails extends Component {
           <h6 className="mt-2">Product Code : <b>{product_code}</b></h6>
            
 
+
+               <div className={ColorDiv}>
+               <h6 className="mt-2"> Choose Color  </h6>
+               <select className="form-control form-select">
+               <option>Choose Color</option>
+               {ColorOption}
+               </select> 
+               </div>
+
+
+               <div className={SizeDiv}>
+               <h6 className="mt-2"> Choose Size  </h6>
+               <select className="form-control form-select">
+               <option>Choose Size</option>
+               {SizeOption}
+               </select> 
+               </div>
+
+               <div className="" >
+               <h6 className="mt-2"> Choose Quantity  </h6>
+               <select className="form-control form-select">
+               <option>Choose Quantity</option>
+               <option value="01">01</option>
+               <option value="02">02</option>
+               <option value="03">03</option>
+               <option value="04">04</option>
+               <option value="05">05</option>
+               <option value="06">06</option>
+               <option value="07">07</option>
+               <option value="08">08</option>
+               <option value="09">09</option>
+               <option value="10">10</option> 
+                
+               </select> 
+               </div>
           
 
           <div className="input-group mt-3">
