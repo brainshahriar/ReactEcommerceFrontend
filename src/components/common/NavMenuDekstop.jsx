@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import {Navbar,Container, Row, Col ,Button} from 'react-bootstrap';
 import Logo from '../../assets/images/easyshop.png';
 import Bars from '../../assets/images/bars.png';
-import {Link} from "react-router-dom";
+import {Link,Redirect} from "react-router-dom";
 import MegaMenuAll from '../home/megaMenuAll';
 class NavMenuDekstop extends Component {
 
@@ -46,6 +46,11 @@ class NavMenuDekstop extends Component {
         SearchOnClick(){
             if(this.state.SearchKey.length>=2){
                 this.setState({SearchRedirectStatus:true})
+            }
+        }
+        searchRedirect(){
+            if(this.state.SearchRedirectStatus===true){
+                return <Redirect to={"/productbysearch/"+this.state.SearchKey}
             }
         }
 
