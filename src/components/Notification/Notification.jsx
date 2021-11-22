@@ -6,6 +6,9 @@ class Notification extends Component {
           super();
           this.state={
                show:false,
+               ProductData:[]  ,
+               isLoading:"",
+               mainDiv:"d-none" 
           }
      }
 

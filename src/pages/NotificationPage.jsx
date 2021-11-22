@@ -6,7 +6,7 @@ import NavMenuMobile from '../components/common/NavMenuMobile'
 import Notification from '../components/Notification/Notification'
 
 class NotificationPage extends Component {
-
+ 
      componentDidMount(){
           window.scroll(0,0)
      }
