@@ -10,7 +10,9 @@ class NavMenuDekstop extends Component {
             super();
             this.state={
                 SideNavState: "sideNavClose",
-                ContentOverState: "ContentOverlayClose"
+                ContentOverState: "ContentOverlayClose",
+                SearchKey:"",
+                SearchRedirectStatus:false
             }
         }
 
@@ -36,6 +38,16 @@ class NavMenuDekstop extends Component {
             }
         }
 
+        SearchOnChange(event){
+             let SearchKey=event.target.value;
+             //alert(SearchKey);
+             tis.setState({SearchKey:SearchKey})
+        }
+        SearchOnClick(){
+            if(this.state.SearchKey.length>=2){
+                this.setState({SearchRedirectStatus:true})
+            }
+        }
 
     render() {
         return (
@@ -49,13 +61,13 @@ class NavMenuDekstop extends Component {
                           <img onClick={this.MenuBarClickHandler} className="bar-img" src={Bars} />                          <Link to="/"> <img className="nav-logo" src={Logo} /> </Link>
                           </Col>
 
-                          <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
-                            <div className="input-group w-100">
-                            <input type="text" className="form-control" />
-                            <Button type="button" className="btn site-btn"><i className="fa fa-search"> </i>
-                            </Button>
-                            </div>
-                          </Col>
+                <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
+                <div className="input-group w-100">
+                <input onChange={this.SearchOnChange} type="text" className="form-control" />
+                <Button onClick={this.SearchOnClick} type="button" className="btn site-btn"><i className="fa fa-search"> </i>
+                </Button>
+                </div>
+                </Col>
 
                           <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
                           <Link to="/notification" className="btn"><i className="fa h4 fa-bell"></i><sup><span className="badge text-white bg-danger">5</span></sup>                         </Link>

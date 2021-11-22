@@ -46,9 +46,6 @@ class SubCategory extends Component {
  
           });
 
-
-
-
           return (
                <Fragment>
                <Container className="text-center" fluid={true}>
