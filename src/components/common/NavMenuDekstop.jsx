@@ -50,7 +50,7 @@ class NavMenuDekstop extends Component {
         }
         searchRedirect(){
             if(this.state.SearchRedirectStatus===true){
-                return <Redirect to={"/productbysearch/"+this.state.SearchKey}
+                return <Redirect to={"/productbysearch/"+this.state.SearchKey} />
             }
         }
 

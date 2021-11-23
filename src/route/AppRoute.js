@@ -46,7 +46,9 @@ class AppRoute extends Component {
  <Route exact path="/productcategory/:category" render={(props) => <ProductCategoryPage {...props} key={Date.now()} /> } />
 
  <Route exact path="/productsubcategory/:category/:subcategory" render={(props) => <ProductSubCategoryPage {...props} key={Date.now()} /> } /> 
-              
+
+   <Route exact path="/productbysearch/:searchKey" render={(props) => <ProductSubCategoryPage {...props} key={Date.now()} /> } /> 
+            
 
           </Switch>
 
