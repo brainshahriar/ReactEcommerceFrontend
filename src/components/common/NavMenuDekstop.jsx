@@ -14,6 +14,9 @@ class NavMenuDekstop extends Component {
                 SearchKey:"",
                 SearchRedirectStatus:false
             }
+            this.SearchOnChange=this.SearchOnChange.bind(this);
+            this.SearchOnClick=this.SearchOnClick.bind(this);
+            this.searchRedirect=this.searchRedirect.bind(this);
         }
 
 
@@ -41,7 +44,7 @@ class NavMenuDekstop extends Component {
         SearchOnChange(event){
              let SearchKey=event.target.value;
              //alert(SearchKey);
-             tis.setState({SearchKey:SearchKey})
+             this.setState({SearchKey:SearchKey})
         }
         SearchOnClick(){
             if(this.state.SearchKey.length>=2){
@@ -83,7 +86,7 @@ class NavMenuDekstop extends Component {
                             <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> 3 Items </Link>                          </Col>
 
                      </Row>
-
+            {this.searchRedirect()}
                 </Container>
 
               </Navbar>
