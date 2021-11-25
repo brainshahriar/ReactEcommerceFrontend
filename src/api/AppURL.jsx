@@ -23,7 +23,8 @@ class AppURL {
     static ProductBySearch(searchkey){
         return this.BaseURL+"/search/"+searchkey;
    }
-  
+   static UserLogin = this.BaseURL+"/login"
+
 
 }
 
