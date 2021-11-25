@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { Container,Row,Col, Form,Button } from 'react-bootstrap'
 import Login from '../../assets/images/login.png'
-import { Link } from 'react-router-dom'
 import AppURL from '../../api/AppURL';
 import axios from 'axios';
+import { Link, Redirect } from 'react-router-dom'
+
 class UserLogin extends Component {
 
      constructor(){
@@ -11,7 +12,8 @@ class UserLogin extends Component {
           this.state={
                email:"",
                password:"",
-               message:""
+               message:"",
+               loggedIn:false
           }
      }
  //Login form
@@ -21,14 +23,23 @@ class UserLogin extends Component {
            email:this.state.email,
            password:this.state.password
       }
-      axios.get(AppURL.UserLogin,data).then(response=>{
-         
+      axios.post(AppURL.UserLogin,data).then(response=>{
+          localStorage.setItem('token',response.data.token);
+          this.setState({loggedIn:true})
       }).catch(error=>{
 
       });
  }
 
      render() {
+
+                     /// After Login Redirect to Profile Page 
+                     if(this.state.loggedIn){
+                         return <Redirect to={'/profile'} />
+                    }
+         
+         
+         
           return (
      <Fragment>
           <Container>
