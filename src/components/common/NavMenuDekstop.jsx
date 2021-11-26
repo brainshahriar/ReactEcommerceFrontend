@@ -56,6 +56,9 @@ class NavMenuDekstop extends Component {
                 return <Redirect to={"/productbysearch/"+this.state.SearchKey} />
             }
         }
+        logout = () => {
+            localStorage.clear();
+       }
 
     render() {
 
@@ -70,7 +73,7 @@ class NavMenuDekstop extends Component {
                  </Link>
 
                  <Link to="/profile" className="h4 btn">PROFILE</Link>
-                 <Link to="/register" className="h4 btn">LOGOUT</Link>
+                 <Link to="/register" className="h4 btn" onClick={this.logout}>LOGOUT</Link>
 
      <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> 3 Items </Link>
                   </div> 
