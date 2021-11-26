@@ -58,6 +58,44 @@ class NavMenuDekstop extends Component {
         }
 
     render() {
+
+        let buttons;
+        if(localStorage.getItem('token')){
+             buttons = (
+                  <div>
+<Link to="/favourite" className="btn"><i className="fa h4 fa-heart"></i><sup><span className="badge text-white bg-danger">3</span></sup>                  
+                 </Link> 
+
+                 <Link to="/notification" className="btn"><i className="fa h4 fa-bell"></i><sup><span className="badge text-white bg-danger">5</span></sup>                  
+                 </Link>
+
+                 <Link to="/profile" className="h4 btn">PROFILE</Link>
+                 <Link to="/register" className="h4 btn">LOGOUT</Link>
+
+     <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> 3 Items </Link>
+                  </div> 
+             )
+
+        }else{
+             buttons = (
+                  <div>
+    <Link to="/favourite" className="btn"><i className="fa h4 fa-heart"></i><sup><span className="badge text-white bg-danger">3</span></sup>                  
+                 </Link> 
+
+                 <Link to="/notification" className="btn"><i className="fa h4 fa-bell"></i><sup><span className="badge text-white bg-danger">5</span></sup>                  
+                 </Link>
+
+                 <Link to="/login" className="h4 btn">LOGIN</Link>
+                 <Link to="/register" className="h4 btn">REGISTER</Link>
+
+     <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> 3 Items </Link>
+                  </div> 
+             )
+
+        }
+
+
+
         return (
             <Fragment>
             <div className="TopSectionDown">
@@ -78,12 +116,8 @@ class NavMenuDekstop extends Component {
                 </Col>
 
                           <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
-                          <Link to="/notification" className="btn"><i className="fa h4 fa-bell"></i><sup><span className="badge text-white bg-danger">5</span></sup>                         </Link>
-                          <Link to="/favourite" className="btn"><i className="fa h4 fa-heart"></i><sup><span className="badge text-white bg-danger">3</span></sup>                              </Link>
-                           
-                            <Link to="/login" className="h4 btn">LOGIN</Link>
-                            <Link to="/register" className="h4 btn">REGISTER</Link>
-                            <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> 3 Items </Link>                          </Col>
+                            {buttons}            
+                                         </Col>
 
                      </Row>
             {this.searchRedirect()}
