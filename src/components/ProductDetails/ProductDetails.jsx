@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Container,Row,Col, Form,Button } from 'react-bootstrap'
+import Product1 from '../../assets/images/product/product1.png'
 import ReactDOM from 'react-dom'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Link } from 'react-router-dom'
@@ -10,12 +11,14 @@ class ProductDetails extends Component {
 
      constructor(){
           super();
+          this.state={
+               previewImg:"0"
+          }
      }
 
-     imgOnClick(event){
+     imgOnClick = (event) => {
           let imgSrc = event.target.getAttribute('src');
-          let previewImg = document.getElementById('previewImg');
-               ReactDOM.findDOMNode(previewImg).setAttribute('src',imgSrc)
+          this.setState({previewImg:imgSrc})
      }
 
 
@@ -44,6 +47,10 @@ class ProductDetails extends Component {
           let category = ProductAllData['productList'][0]['category'];
           let subcategory = ProductAllData['productList'][0]['subcategory'];
           let image = ProductAllData['productList'][0]['image'];
+
+          if(this.state.previewImg === "0"){
+               this.setState({previewImg:image})
+          }
 
           let price = ProductAllData['productList'][0]['price'];
           let product_code = ProductAllData['productList'][0]['product_code'];
@@ -95,6 +102,7 @@ class ProductDetails extends Component {
           return ( 
                <Fragment>
                <Container fluid={true}  className="BetweenTwoSection">
+
                <div className="breadbody">
                <Breadcrumb>
   <Breadcrumb.Item> <Link to="/"> Home </Link> </Breadcrumb.Item>
@@ -104,19 +112,21 @@ class ProductDetails extends Component {
   <Breadcrumb.Item> <Link to={"/productsubcategory/"+category+"/"+subcategory}> {subcategory } </Link> </Breadcrumb.Item>
 
     <Breadcrumb.Item> <Link to={"/productdetails/"+product_id}> {title } </Link> </Breadcrumb.Item>   
+
 </Breadcrumb>
 </div>
+
+
                    <Row className="p-2">
 <Col className="shadow-sm bg-white pb-3 mt-4" md={12} lg={12} sm={12} xs={12}>
      <Row>
           <Col className="p-3" md={6} lg={6} sm={12} xs={12}>
-          <img id="previewImg" className="bigimage" src={image_one} />
+          
 
-               <div className="bigimage">
+               
+          <InnerImageZoom className="detailimage" zoomScale={1.8} zoomType={"hover"} src={this.state.previewImg} zoomSrc={this.state.previewImg} />
+         
 
-          <InnerImageZoom zoomScale={1.8} zoomType={"hover"} src={image_one} zoomSrc={image_one} />
-
-          </div>
           <Container  className="my-3">
                <Row>
                     <Col className="p-0 m-0"  md={3} lg={3} sm={3} xs={3}>
