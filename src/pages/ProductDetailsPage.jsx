@@ -36,7 +36,7 @@ class ProductDetailsPage extends Component {
 
      render() {
 
-          if(this.state.mainDiv == "d-none"){
+          if(this.state.mainDiv == "d-none"){ 
 
                return (
                     <Fragment> 
@@ -77,7 +77,7 @@ class ProductDetailsPage extends Component {
                     </div>                       
      
                     <ProductDetails data={this.state.ProductData} /> 
-                    <SuggestedProduct/>
+                 
                     
                     <div className="Desktop">
                     <FooterDekstop/>
