@@ -73,7 +73,9 @@ class SuggestedProduct extends Component {
                         <Container className="text-center" fluid={true}>
                <div className="section-title text-center mb-55"><h2>YOU MAY ALSO LIKE </h2>
                <p>Some Of Our Exclusive Collection, You May Like</p>
-               </div>     
+               </div>
+     
+      
           <Row> 
                {MyView}
          </Row>

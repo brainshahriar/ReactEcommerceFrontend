@@ -35,6 +35,13 @@ class AppURL {
 static ReviewList(code){
     return this.BaseURL+"/reviewlist/"+code;
 }
+static SimilarProduct(code){
+    return this.BaseURL+"/similar/"+code;
+}
+
+static ReviewList(code){
+    return this.BaseURL+"/reviewlist/"+code;
+}
 }
 
 export default AppURL
